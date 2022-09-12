@@ -269,8 +269,8 @@
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/RestAPIPromocodeData.csv,${Token})}
-${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/RestAPIPromocodeData.csv,\n)}</stringProp>
+            <stringProp name="script">${__StringToFile(RestAPIPromocodeData.csv,${Token})}
+${__StringToFile(RestAPIPromocodeData.csv,\n)}</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
@@ -314,7 +314,7 @@ ${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/RestA
         </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data" enabled="true">
-          <stringProp name="filename">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\WriteData\RestAPIPromocodeData.csv</stringProp>
+          <stringProp name="filename">RestAPIPromocodeData.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">Token</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -501,7 +501,7 @@ WDS.sampleResult.sampleEnd();</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\WriteData\Result.csv</stringProp>
+        <stringProp name="filename">Result.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
