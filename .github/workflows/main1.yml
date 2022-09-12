@@ -10,7 +10,7 @@ jobs:
       - name: Run JMeter Tests
         uses: ./
         with:
-          test-plan-path: TestPlans/RestAPItokentoManualRedemption.jmx
+          test-plan-path: TestPlans/PPDS/RestAPItokentoManualRedemption.jmx
           args: ""
           
       - name: Upload Results
