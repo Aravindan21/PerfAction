@@ -269,8 +269,8 @@
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">${__StringToFile(./RestAPIPromocodeData.csv,${Token})}
-${__StringToFile(./RestAPIPromocodeData.csv,\n)}</stringProp>
+            <stringProp name="script">${__StringToFile(./TestPlans/PPDS/RestAPIPromocodeData.csv,${Token})}
+${__StringToFile(./TestPlans/PPDS/RestAPIPromocodeData.csv,\n)}</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
           <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -364,7 +364,7 @@ ${__StringToFile(./RestAPIPromocodeData.csv,\n)}</stringProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data" enabled="true">
-          <stringProp name="filename">./RestAPIPromocodeData.csv</stringProp>
+          <stringProp name="filename">./TestPlans/PPDS/RestAPIPromocodeData.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">Token</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
