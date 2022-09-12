@@ -15,7 +15,7 @@ COPY entrypoint.sh /entrypoint.sh
 COPY jmeter-plugin-install.sh /jmeter-plugin-install.sh
 
 # Downloading JMeter
-RUN apk --no-cache add curl ca-certificates openjdk9-jre && \
+RUN apk --no-cache add curl ca-certificates openjdk8-jre && \
     curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     tar -zxvf /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     mkdir -p /opt/apache && \
