@@ -20,4 +20,4 @@ pwd
 
 ls -l ${JMETER_HOME}/bin/*.sh
 
-${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-udp=0.4
+#${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-udp=0.4
