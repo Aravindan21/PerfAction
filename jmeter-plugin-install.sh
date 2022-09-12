@@ -13,6 +13,7 @@ java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-mana
 
 cd /opt/apache/apache-jmeter-${JMETER_VERSION}/bin/
 java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install jpgc-udp=0.4
+java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install jpgc-webdriver
 
 chmod a+x ${JMETER_HOME}/bin/*.sh
 
