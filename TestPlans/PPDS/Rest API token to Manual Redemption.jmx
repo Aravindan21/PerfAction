@@ -269,8 +269,8 @@
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">${__StringToFile(./TestPlans/PPDS/RestAPIPromocodeData.csv,${Token})}
-${__StringToFile(./TestPlans/PPDS/RestAPIPromocodeData.csv,\n)}</stringProp>
+            <stringProp name="script">${__StringToFile(TestPlans/PPDS/RestAPIPromocodeData.csv,${Token})}
+${__StringToFile(TestPlans/PPDS/RestAPIPromocodeData.csv,\n)}</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
@@ -305,7 +305,7 @@ ${__StringToFile(./TestPlans/PPDS/RestAPIPromocodeData.csv,\n)}</stringProp>
           <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
           <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
           <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
-          <stringProp name="ChromeDriverConfig.chromedriver_path">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\chromedriver.exe</stringProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">TestPlans/PPDS/chromedriver.exe</stringProp>
           <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
           <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
           <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
@@ -501,7 +501,7 @@ WDS.sampleResult.sampleEnd();</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">./TestPlans/PPDS/Result.csv</stringProp>
+        <stringProp name="filename">TestPlans/PPDS/Result.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
