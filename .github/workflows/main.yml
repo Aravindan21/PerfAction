@@ -10,7 +10,7 @@ jobs:
       - name: Run JMeter Tests
         uses: ./
         with:
-          test-plan-path: ./TestPlans/S01_SimpleExample/S01_SimpleExample.jmx
+          test-plan-path: ./TestPlans/Rest_API_token_to_Manual_Redemption_Github_Actions.jmx
           args: ""
           
       - name: Upload Results
