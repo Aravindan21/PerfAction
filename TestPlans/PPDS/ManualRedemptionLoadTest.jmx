@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SOAP API" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xd;
+&lt;soap:Envelope xmlns:a=&quot;http://www.w3.org/2005/08/addressing&quot; xmlns:tem=&quot;http://tempuri.org/&quot; xmlns:prom=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot; xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&#xd;
+               xmlns:prom1=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;&#xd;
+    &lt;soap:Header&gt;&#xd;
+        &lt;a:Action&gt;http://tempuri.org/PCService_Def/GetPromocode&lt;/a:Action&gt;&#xd;
+        &lt;a:To&gt;https://api-qa.swiftprepaid.com/PromocodeService.svc&lt;/a:To&gt;&#xd;
+    &lt;/soap:Header&gt;&#xd;
+    &lt;soap:Body&gt;&#xd;
+        &lt;ns1:GetPromocode xmlns:ns1=&quot;http://tempuri.org/&quot;&gt;&#xd;
+            &lt;ns1:request&gt;&#xd;
+                &lt;ns2:Amount xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;0.01&lt;/ns2:Amount&gt;&#xd;
+                &lt;ns2:ClientId xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;AUT02&lt;/ns2:ClientId&gt;&#xd;
+                &lt;ns2:Customer xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;&#xd;
+                    &lt;ns3:Address1 xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;12 Lake road&lt;/ns3:Address1&gt;&#xd;
+                    &lt;ns3:Address2 xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;&lt;/ns3:Address2&gt;&#xd;
+                    &lt;ns3:City xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;Chicago&lt;/ns3:City&gt;&#xd;
+                    &lt;ns3:CountryCode xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;840&lt;/ns3:CountryCode&gt;&#xd;
+                    &lt;ns3:EmailAddress xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;hidaleb107@logodez.com&lt;/ns3:EmailAddress&gt;&#xd;
+                    &lt;ns3:FirstName xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;Aravindan&lt;/ns3:FirstName&gt;&#xd;
+                    &lt;ns3:LastName xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;Kaivalliam&lt;/ns3:LastName&gt;&#xd;
+                    &lt;ns3:PhoneNumber xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;9876543210&lt;/ns3:PhoneNumber&gt;&#xd;
+                    &lt;ns3:PostalCode xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;60606&lt;/ns3:PostalCode&gt;&#xd;
+                    &lt;ns3:State xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;IL&lt;/ns3:State&gt;&#xd;
+                &lt;/ns2:Customer&gt;&#xd;
+                &lt;ns2:EndClientId xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;&lt;/ns2:EndClientId&gt;&#xd;
+                &lt;ns2:IssuanceProductId xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;AUT02IP0013&lt;/ns2:IssuanceProductId&gt;&#xd;
+                &lt;ns2:LocationId xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;PROMOCODE&lt;/ns2:LocationId&gt;&#xd;
+                &lt;ns2:Password xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;Aut0!ssu@nce162&lt;/ns2:Password&gt;&#xd;
+                &lt;ns2:PromocodeProgramId xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;AUT02PP0010&lt;/ns2:PromocodeProgramId&gt;&#xd;
+                &lt;ns2:UserId xmlns:ns2=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;SVC_AutoIssuance&lt;/ns2:UserId&gt;&#xd;
+                &lt;ns3:DistributionTemplate xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;&lt;/ns3:DistributionTemplate&gt;&#xd;
+                &lt;ns3:ParticipantId xmlns:ns3=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary&quot;&gt;&lt;/ns3:ParticipantId&gt;&#xd;
+            &lt;/ns1:request&gt;&#xd;
+        &lt;/ns1:GetPromocode&gt;&#xd;
+    &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api-qa.swiftprepaid.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">PromocodeService.svc</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/soap+xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">Token</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">&lt;Promocode xmlns=&quot;http://schemas.datacontract.org/2004/07/PromcodeServiceLibrary.Classes&quot;&gt;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&lt;/Promocode&gt;</stringProp>
+            <stringProp name="BoundaryExtractor.default">Promocode not found</stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">0</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/PromocodeData.csv,${Token})}
+${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/PromocodeData.csv,\n)}</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\WriteData\PromocodeData.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">Tokens</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.incognito_enabled">true</boolProp>
+          <boolProp name="ChromeDriverConfig.no_sandbox_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc - WebDriver Sampler" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium); //WebDriver classes
+var ui=JavaImporter(org.openqa.selenium.support.ui)
+var wait=new ui.WebDriverWait(WDS.browser,120);
+
+//Captures sampler&apos;s start time
+WDS.sampleResult.sampleStart();
+WDS.sampleResult.getLatency();
+WDS.log.info(&quot;Sample started&quot;);
+
+//Get response from
+WDS.sampleResult.getResponseData();
+
+//Launch url
+WDS.browser.get(&apos;https://ppds-qa.swiftprepaid.com/&apos;);
+
+//Enter token and proceed with redemption
+var tokenField = WDS.browser.findElement(pkg.By.id(&apos;Code&apos;));
+
+var vars = org.apache.jmeter.threads.JMeterContextService.getContext().getVariables();
+var foo = vars.get(&apos;Token&apos;);
+WDS.log.info(&quot;token: &quot;+foo);
+
+if(foo.indexOf(&apos;Token&apos;)==-1){
+tokenField.sendKeys(&apos;${Token}&apos;);
+var login = WDS.browser.findElement(pkg.By.id(&apos;Login.Btn.Token&apos;));
+login.click();
+
+var redeem = WDS.browser.findElement(pkg.By.id(&apos;RedemptionOptions.Btn.Select_VIRTUAL&apos;));
+redeem.click();
+
+java.lang.Thread.sleep(5000);
+WDS.browser.executeScript(&apos;window.scrollTo(0, 250);&apos;);
+
+wait.until(ui.ExpectedConditions.elementToBeClickable(pkg.By.xpath(&quot;//button[text()=&apos;Accept&apos;]&quot;)));
+var accept = WDS.browser.findElement(pkg.By.xpath(&quot;//button[text()=&apos;Accept&apos;]&quot;));
+accept.click();
+
+java.lang.Thread.sleep(2000);
+wait.until(ui.ExpectedConditions.elementToBeClickable(pkg.By.xpath(&quot;//button[@class=&apos;form__btn&apos;]&quot;)));
+java.lang.Thread.sleep(5000);
+var confirm = WDS.browser.findElement(pkg.By.xpath(&quot;//button[@class=&apos;form__btn&apos;]&quot;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;, confirm) ;
+
+wait.until(ui.ExpectedConditions.elementToBeClickable(pkg.By.xpath(&quot;(//div[@class=&apos;siteAgreementTerms modal__body modal__body--transparent&apos;])[1]&quot;)));
+var terms = WDS.browser.findElement(pkg.By.xpath(&quot;(//div[@class=&apos;siteAgreementTerms modal__body modal__body--transparent&apos;])[1]&quot;));
+terms.click();
+java.lang.Thread.sleep(5000);
+WDS.browser.executeScript(&apos;window.scrollTo(0, 25000);&apos;);
+
+wait.until(ui.ExpectedConditions.elementToBeClickable(pkg.By.xpath(&quot;//p[contains(text(),&apos;This Cardholder Agreement is effective&apos;)]&quot;)));
+var scroll = WDS.browser.findElement(pkg.By.xpath(&quot;//p[contains(text(),&apos;This Cardholder Agreement is effective&apos;)]&quot;));
+WDS.browser.executeScript(&apos;arguments[0].scrollIntoView(true);&apos;,scroll);
+
+wait.until(ui.ExpectedConditions.elementToBeClickable(pkg.By.id(&apos;MyWallet.Btn.Agree&apos;)));
+var agree = WDS.browser.findElement(pkg.By.id(&apos;MyWallet.Btn.Agree&apos;));
+agree.click();
+java.lang.Thread.sleep(5000);
+}
+
+//End of script recording
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters">${Tokens}</stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
