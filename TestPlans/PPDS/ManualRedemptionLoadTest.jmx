@@ -110,8 +110,8 @@
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">${__StringToFile(TestPlans/PPDS/PromocodeData.csv,${Token})}
-${__StringToFile(TestPlans/PPDS/PromocodeData.csv,\n)}</stringProp>
+            <stringProp name="script">${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/PromocodeData.csv,${Token})}
+${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/PromocodeData.csv,\n)}</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
@@ -245,7 +245,7 @@ ${__StringToFile(TestPlans/PPDS/PromocodeData.csv,\n)}</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">PromocodeData.csv</stringProp>
+          <stringProp name="filename">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\WriteData\PromocodeData.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -254,7 +254,7 @@ ${__StringToFile(TestPlans/PPDS/PromocodeData.csv,\n)}</stringProp>
           <stringProp name="variableNames">Tokens</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="false">
           <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
           <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
           <stringProp name="WebDriverConfig.http_host"></stringProp>
@@ -270,12 +270,12 @@ ${__StringToFile(TestPlans/PPDS/PromocodeData.csv,\n)}</stringProp>
           <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
           <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
           <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
-          <stringProp name="ChromeDriverConfig.chromedriver_path">TestPlans/PPDS/chromedriver.exe</stringProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\chromedriver.exe</stringProp>
           <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
           <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
           <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
           <boolProp name="ChromeDriverConfig.incognito_enabled">true</boolProp>
-          <boolProp name="ChromeDriverConfig.no_sandbox_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.no_sandbox_enabled">true</boolProp>
         </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
         <hashTree/>
         <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc - WebDriver Sampler" enabled="true">
