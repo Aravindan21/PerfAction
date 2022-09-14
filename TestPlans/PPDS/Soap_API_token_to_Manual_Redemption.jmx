@@ -110,8 +110,8 @@
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/PromocodeData.csv,${Token})}
-${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/PromocodeData.csv,\n)}</stringProp>
+            <stringProp name="script">${__StringToFile(TestPlans/PPDS/PromocodeData.csv,${Token})}
+${__StringToFile(TestPlans/PPDS/PromocodeData.csv,\n)}</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
@@ -258,7 +258,7 @@ ${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/Promo
           <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
           <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
           <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
-          <stringProp name="ChromeDriverConfig.chromedriver_path">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\chromedriver.exe</stringProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">TestPlans/PPDS/chromedriver.exe</stringProp>
           <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
           <boolProp name="ChromeDriverConfig.headless_enabled">true</boolProp>
           <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
@@ -269,7 +269,7 @@ ${__StringToFile(C:/Users/akaivalliam/Documents/Onbe/Jmeter POCs/WriteData/Promo
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">C:\Users\akaivalliam\Documents\Onbe\Jmeter POCs\WriteData\PromocodeData.csv</stringProp>
+          <stringProp name="filename">PromocodeData.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">false</boolProp>
