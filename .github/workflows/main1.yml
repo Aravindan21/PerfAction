@@ -1,7 +1,7 @@
 on: [push]
 jobs:
   jmeter_job:
-    runs-on: windows 10
+    runs-on: windows
     name: JMeter Test Execution
     steps:      
       - name: Checkout
