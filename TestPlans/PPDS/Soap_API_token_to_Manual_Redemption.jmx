@@ -258,7 +258,7 @@ ${__StringToFile(TestPlans/PPDS/PromocodeData.csv,\n)}</stringProp>
           <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
           <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
           <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
-          <stringProp name="ChromeDriverConfig.chromedriver_path">TestPlans/PPDS/chromedriver</stringProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">TestPlans/PPDS/chromedriver.exe</stringProp>
           <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
           <boolProp name="ChromeDriverConfig.headless_enabled">true</boolProp>
           <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
