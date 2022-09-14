@@ -10,10 +10,11 @@ echo "Downloading Plugin Manager"
 curl -L https://jmeter-plugins.org/get/ --output ${JMETER_HOME}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_MANAGER_VERSION}.jar
 
 java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
+java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_WEBDRIVER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
 
 cd /opt/apache/apache-jmeter-${JMETER_VERSION}/bin/
 java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install jpgc-udp=0.4
-java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install jpgc-webdriver
+
 
 chmod a+x ${JMETER_HOME}/bin/*.sh
 
