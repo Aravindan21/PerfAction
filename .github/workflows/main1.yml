@@ -1,7 +1,7 @@
 on: [push]
 jobs:
   jmeter_job:
-    runs-on: windows
+    runs-on: ubuntu-latest
     name: JMeter Test Execution
     steps:      
       - name: Checkout
