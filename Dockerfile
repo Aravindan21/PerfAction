@@ -26,7 +26,7 @@ RUN apk --no-cache add curl ca-certificates openjdk8-jre && \
     chmod a+x /entrypoint.sh && \
     chmod a+x /jmeter-plugin-install.sh
     
-RUN sudo apt install xvfb
+    sudo apt install xvfb
     sudo curl -sS -o – https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
     sudo bash -c “echo ‘deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main’ >> /etc/apt/sources.list.d/google-chrome.list”
     sudo apt-get update
