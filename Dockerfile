@@ -26,17 +26,17 @@ RUN apk --no-cache add curl ca-certificates openjdk8-jre && \
     chmod a+x /entrypoint.sh && \
     chmod a+x /jmeter-plugin-install.sh
     
-    sudo apt install xvfb
-    sudo curl -sS -o – https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
-    sudo bash -c “echo ‘deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main’ >> /etc/apt/sources.list.d/google-chrome.list”
-    sudo apt-get update
-    sudo apt-get install google-chrome-stable
+    apt install xvfb
+    curl -sS -o – https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+    bash -c “echo ‘deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main’ >> /etc/apt/sources.list.d/google-chrome.list”
+    apt-get update
+    apt-get install google-chrome-stable
     google-chrome –version 
     wget https://chromedriver.storage.googleapis.com/99.0.4844.51/chromedriver_linux64.zip
     unzip chromedriver_linux64.zip
-    sudo mv chromedriver /usr/bin/chromedriver
-    sudo chown root:root /usr/bin/chromedriver
-    sudo chmod +x /usr/bin/chromedriver 
+    mv chromedriver /usr/bin/chromedriver
+    chown root:root /usr/bin/chromedriver
+    chmod +x /usr/bin/chromedriver 
     wget https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.1.0/selenium-server-4.1.2.jar
     mv selenium-server-4.1.2.jar selenium-server.jar
     xvfb-run java -Dwebdriver.chrome.driver=/usr/bin/chromedriver -jar selenium-server.jar
